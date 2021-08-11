@@ -1,8 +1,3 @@
-// Initialize variables 
-var chance = 50;
-var minimum = 0;
-var maximum = 127;
-
 // Random velocity + probability gate
 function HandleMIDI(event) {
 	chance = 	GetParameter("Overall Chance");
