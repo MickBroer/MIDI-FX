@@ -37,20 +37,122 @@ function probabilityGate(pitch, note, notechance) {
 }
 
 // GUI
-var PluginParameters = [
-	{name:"Overall Chance", type:"lin", minValue:0, maxValue:100, numberOfSteps:100, defaultValue:50, unit:"%"},
-	{name:"C", type:"lin", minValue:0, maxValue:100, numberOfSteps:100, defaultValue:50, unit:"%"},
-	{name:"C#", type:"lin", minValue:0, maxValue:100, numberOfSteps:100, defaultValue:50, unit:"%"},
-	{name:"D", type:"lin", minValue:0, maxValue:100, numberOfSteps:100, defaultValue:50, unit:"%"},
-	{name:"D#", type:"lin", minValue:0, maxValue:100, numberOfSteps:100, defaultValue:50, unit:"%"},
-	{name:"E", type:"lin", minValue:0, maxValue:100, numberOfSteps:100, defaultValue:50, unit:"%"},
-	{name:"F", type:"lin", minValue:0, maxValue:100, numberOfSteps:100, defaultValue:50, unit:"%"},
-	{name:"F#", type:"lin", minValue:0, maxValue:100, numberOfSteps:100, defaultValue:50, unit:"%"},
-	{name:"G", type:"lin", minValue:0, maxValue:100, numberOfSteps:100, defaultValue:50, unit:"%"},
-	{name:"G#", type:"lin", minValue:0, maxValue:100, numberOfSteps:100, defaultValue:50, unit:"%"},
-	{name:"A", type:"lin", minValue:0, maxValue:100, numberOfSteps:100, defaultValue:50, unit:"%"},
-	{name:"A#", type:"lin", minValue:0, maxValue:100, numberOfSteps:100, defaultValue:50, unit:"%"},
-	{name:"B", type:"lin", minValue:0, maxValue:100, numberOfSteps:100, defaultValue:50, unit:"%"},
-	{name:"Velocity min", type:"lin", minValue:0, maxValue:127, numberOfSteps:127, defaultValue:0},
-	{name:"Velocity max", type:"lin", minValue:0, maxValue:127, numberOfSteps:127, defaultValue:127}
-	];
+var PluginParameters = [{
+	name:"Overall Chance", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:100, 
+	numberOfSteps:100, 
+	defaultValue:50, 
+	unit:"%"
+}, {
+	name:"C", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:100, 
+	numberOfSteps:100, 
+	defaultValue:50, 
+	unit:"%"
+},	{
+	name:"C#", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:100, 
+	numberOfSteps:100, 
+	defaultValue:50, 
+	unit:"%"
+},	{
+	name:"D", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:100, 
+	numberOfSteps:100, 
+	defaultValue:50, 
+	unit:"%"
+},	{
+	name:"D#", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:100, 
+	numberOfSteps:100, 
+	defaultValue:50, 
+	unit:"%"
+},	{
+	name:"E", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:100, 
+	numberOfSteps:100, 
+	defaultValue:50, 
+	unit:"%"
+},	{
+	name:"F", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:100, 
+	numberOfSteps:100, 
+	defaultValue:50, 
+	unit:"%"
+},	{
+	name:"F#", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:100, 
+	numberOfSteps:100, 
+	defaultValue:50, 
+	unit:"%"
+},	{
+	name:"G", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:100, 
+	numberOfSteps:100, 
+	defaultValue:50, 
+	unit:"%"
+},	{
+	name:"G#", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:100, 
+	numberOfSteps:100, 
+	defaultValue:50, 
+	unit:"%"
+},	{
+	name:"A", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:100, 
+	numberOfSteps:100, 
+	defaultValue:50, 
+	unit:"%"
+},	{
+	name:"A#", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:100, 
+	numberOfSteps:100, 
+	defaultValue:50, 
+	unit:"%"
+},	{
+	name:"B", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:100, 
+	numberOfSteps:100, 
+	defaultValue:50, 
+	unit:"%"
+},	{
+	name:"Velocity min", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:127, 
+	numberOfSteps:127, 
+	defaultValue:0
+},	{
+	name:"Velocity max", 
+	type:"lin", 
+	minValue:0, 
+	maxValue:127, 
+	numberOfSteps:127, 
+	defaultValue:127
+}];
