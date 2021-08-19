@@ -30,6 +30,7 @@ function HandleMIDI(event) {
 				event.send();
 			}
 	}
+		// make sure very noteOff midi-message is sent
 		else if (event instanceof NoteOff) {
 			event.send();
 	}
@@ -42,6 +43,9 @@ function probabilityGate(pitch, note, notechance) {
 
 // GUI
 var PluginParameters = [{
+	name:"- Probability gate -",
+	type:"text"
+},	{
 	name:"Overall Chance", 
 	type:"lin", 
 	minValue:0, 
@@ -49,7 +53,7 @@ var PluginParameters = [{
 	numberOfSteps:100, 
 	defaultValue:50, 
 	unit:"%"
-}, {
+}, 	{
 	name:"C", 
 	type:"lin", 
 	minValue:0, 
@@ -145,6 +149,9 @@ var PluginParameters = [{
 	numberOfSteps:100, 
 	defaultValue:50, 
 	unit:"%"
+},	{
+	name:"----- Velocity -----",
+	type:"text"
 },	{
 	name:"Velocity min", 
 	type:"lin", 
