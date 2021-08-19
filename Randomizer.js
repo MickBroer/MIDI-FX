@@ -19,17 +19,21 @@ function HandleMIDI(event) {
 	if (event instanceof NoteOn && Math.floor(Math.random() * 100) <= chance) {
 		event.velocity = Math.floor(Math.random() * (maximum - minimum) ) + minimum;
 
-		if 	(probabilityGate(event.pitch, 0, chanceC) 	|| probabilityGate(event.pitch, 1, chanceCs) 	|| 
-			probabilityGate(event.pitch, 2, chanceD) 	|| probabilityGate(event.pitch, 3, chanceDs)	||
-			probabilityGate(event.pitch, 4, chanceE) 	|| probabilityGate(event.pitch, 5, chanceF) 	||
-			probabilityGate(event.pitch, 6, chanceFs)	|| probabilityGate(event.pitch, 7, chanceG) 	||
-			probabilityGate(event.pitch, 8, chanceGs) 	|| probabilityGate(event.pitch, 9, chanceA) 	||
-			probabilityGate(event.pitch, 10, chanceAs) 	|| probabilityGate(event.pitch, 11, chanceB))
+		if 	(probabilityGate(event.pitch, 0, chanceC) 	|| 	probabilityGate(event.pitch, 1, chanceCs) 	|| 
+			probabilityGate(event.pitch, 2, chanceD) 	|| 	probabilityGate(event.pitch, 3, chanceDs)	||
+			probabilityGate(event.pitch, 4, chanceE) 	|| 	probabilityGate(event.pitch, 5, chanceF) 	||
+			probabilityGate(event.pitch, 6, chanceFs)	|| 	probabilityGate(event.pitch, 7, chanceG) 	||
+			probabilityGate(event.pitch, 8, chanceGs) 	|| 	probabilityGate(event.pitch, 9, chanceA) 	||
+			probabilityGate(event.pitch, 10, chanceAs) 	|| 	probabilityGate(event.pitch, 11, chanceB))
 
 			{
 				event.send();
 			}
 	}
+		else if (event instanceof NoteOff) {
+			event.send();
+	}
+
 }
 
 function probabilityGate(pitch, note, notechance) {
