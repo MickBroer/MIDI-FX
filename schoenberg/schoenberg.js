@@ -1,8 +1,10 @@
 /*
-        Schoenberg MIDI effect for Logic pro's Scripter, by Mick Broer
+        Schoenberg, random 12-tone MIDI effect for Logic pro's Scripter, by Mick Broer
 */
 var NeedsTimingInfo = true;
-var twelveTone = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var twelveTone = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+scramble(twelveTone);
 
 function scramble(array) {
     var currentIndex = array.length,  randomIndex;
@@ -14,22 +16,21 @@ function scramble(array) {
     array.unshift(0);
 }
 
-scramble(twelveTone);
 
 function HandleMIDI(event) {
     var startPitch = event.pitch;
     var info = GetTimingInfo();
     event.send();
-    for (var i = 0; i < 12; i++){
+    for (var i = 1; i <= 12; i++){
         event.pitch = startPitch + twelveTone[i];
         var delay = GetParameter("time");
-        event.sendAfterBeats((i+1) * getTime(delay));
+        event.sendAfterBeats((i) * getTime(delay));
     }
 }
 
 function ParameterChanged () {
     if (GetParameter("randomize twelvetone")){
-        scramble(twelveTone);
+        scramble(twelveTone).trace;
     }
 }
 
