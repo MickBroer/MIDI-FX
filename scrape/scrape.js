@@ -42,7 +42,7 @@ function HandleMIDI(event) {
 
 function getTime(index) {
     switch (index) {
-    	case 0: return 0.015625; // 1/32
+    	case 0: return 0.015625; // 1/64
         case 1: return 0.03125; // 1/32
         case 2: return 0.0625;  // 1/16
         case 3: return 0.125;   // 1/8
