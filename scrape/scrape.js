@@ -6,30 +6,30 @@ var NeedsTimingInfo = true;
 
 function HandleMIDI(event) {
     if (event instanceof NoteOn) {
-        let repeats    = GetParameter("Number of Repeats");
-        let startVel   = GetParameter("Start Velocity");
-        let endVel     = GetParameter("End Velocity");
-        let timeIndex  = GetParameter("Time");
+        var repeats    = GetParameter("Number of Repeats");
+        var startVel   = GetParameter("Start Velocity");
+        var endVel     = GetParameter("End Velocity");
+        var timeIndex  = GetParameter("Time");
 
-        let velocityStep = 0;
+        var velocityStep = 0;
         if (repeats > 1) {
             velocityStep = (endVel - startVel) / (repeats - 1);
         }
 
-        let beatDelay = getTime(timeIndex);
+        var beatDelay = getTime(timeIndex);
 
-        for (let i = 0; i < repeats; i++) {
-            let stepVel = Math.round(startVel + i * velocityStep);
+        for (var i = 0; i < repeats; i++) {
+            var stepVel = Math.round(startVel + i * velocityStep);
 
             if (stepVel < 1)   stepVel = 1;
             if (stepVel > 127) stepVel = 127;
 
-            let noteOn = new NoteOn(event);
+            var noteOn = new NoteOn(event);
             noteOn.velocity = stepVel;
 
             noteOn.sendAfterBeats(i * beatDelay);
 
-            let noteOff = new NoteOff(noteOn);
+            var noteOff = new NoteOff(noteOn);
 
             noteOff.sendAfterBeats(i * beatDelay + 0.9 * beatDelay);
         }
