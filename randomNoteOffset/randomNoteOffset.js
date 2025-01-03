@@ -8,11 +8,11 @@ var noteOnOffsets = {};
 
 function HandleMIDI(event) {
     if (event instanceof NoteOn) {
-        let maxDelay = GetParameter("Max Random Delay");
+        var maxDelay = GetParameter("Max Random Delay");
 
-        let offset = Math.random() * maxDelay;
+        var offset = Math.random() * maxDelay;
 
-        let key = event.pitch + ":" + event.channel;
+        var key = event.pitch + ":" + event.channel;
 
         if (!noteOnOffsets[key]) {
             noteOnOffsets[key] = [];
@@ -22,10 +22,10 @@ function HandleMIDI(event) {
         event.sendAfterBeats(offset);
     }
     else if (event instanceof NoteOff) {
-        let key = event.pitch + ":" + event.channel;
+        var key = event.pitch + ":" + event.channel;
 
         if (noteOnOffsets[key] && noteOnOffsets[key].length > 0) {
-            let offset = noteOnOffsets[key].shift();
+            var offset = noteOnOffsets[key].shift();
             event.sendAfterBeats(offset);
 
             if (noteOnOffsets[key].length === 0) {
