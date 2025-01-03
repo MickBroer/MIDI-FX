@@ -4,6 +4,7 @@
 var NeedsTimingInfo = true;
 var twelveTone = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
+//randomize notes
 scramble(twelveTone);
 
 function scramble(array) {
@@ -21,7 +22,7 @@ function HandleMIDI(event) {
     var startPitch = event.pitch;
     var info = GetTimingInfo();
     event.send();
-    for (var i = 1; i <= 12; i++){
+    for (var i = 1; i < 12; i++){
         event.pitch = startPitch + twelveTone[i];
         var delay = GetParameter("time");
         event.sendAfterBeats((i) * getTime(delay));
@@ -30,7 +31,7 @@ function HandleMIDI(event) {
 
 function ParameterChanged () {
     if (GetParameter("randomize twelvetone")){
-        scramble(twelveTone).trace;
+        scramble(twelveTone);
     }
 }
 
